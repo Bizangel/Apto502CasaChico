@@ -1,0 +1,38 @@
+<krpano>
+	<action name="updateRadar" scope="local" args="spot_n">
+		calc(spotname, 'spot' + spot_n);
+		set(layer[radar].parent, get(spotname));
+		set(layer[radar].heading, get(layer[get(spotname)].facing) );
+	</action>
+	
+	
+	<layer name="radar" keep = "true" url.flash="%SWFPATH%/plugins/radar.swf" url.html5="%SWFPATH%/plugins/radar.js" align="center" zorder="1" scale.mobile="2.3" fillalpha="0.5" scale="0.8"
+ fillcolor="0x7F5F3F" linewidth="1.0" linecolor="0xE0E0A0" linealpha="0.5" editmode="true" />
+ 
+	<layer name="map" y="16%" x="50" url="%ROOT%/map.png" keep="true" handcursor="false"
+		align="leftbottom" scale="0.3" scale.mobile="0.11" scalechildren="true"  />
+	
+	<style name="mapspot" keep="true" url="greydot.png" parent="map" scale="1" align="lefttop" edge="center" scale.mobile="2.5"
+	onclick="mapspot_onclick();"/>
+	
+	<action name="mapspot_onclick" scope="local">
+		skin_loadscene(get(caller.linkedscene), get(skin_settings.loadscene_blend));
+	</action>
+	
+	<layer name="spot1" style="mapspot" x="683" y="301" zorder="1" linkedscene="entrance" facing="80"/>
+	<layer name="spot2" style="mapspot" x="609" y="344" zorder="1" linkedscene="entrance_bathroom" facing="180"/>
+	<layer name="spot3" style="mapspot" x="704" y="564" zorder="1" linkedscene="kitchen_middle" facing="80"/>
+	<layer name="spot4" style="mapspot" x="517" y="576" zorder="1" linkedscene="hallway" facing="185"/>
+	<layer name="spot5" style="mapspot" x="560" y="519" zorder="1" linkedscene="washing_room" facing="275"/>
+	<layer name="spot6" style="mapspot" x="500" y="399" zorder="1" linkedscene="hallway_bathroom" facing="-120"/>
+	<layer name="spot7" style="mapspot" x="305" y="458" zorder="1" linkedscene="main_closet" facing="-0"/>
+	<layer name="spot8" style="mapspot" x="256" y="378" zorder="1" linkedscene="main_bathroom" facing="-150"/>
+	<layer name="spot9" style="mapspot" x="276" y="746" zorder="1" linkedscene="main_room" facing="80"/>
+	<layer name="spot10" style="mapspot" x="457" y="776" zorder="1" linkedscene="guest_room" facing="0"/>
+	<layer name="spot11" style="mapspot" x="841" y="816" zorder="1" linkedscene="living_view" facing="0"/>
+	<layer name="spot12" style="mapspot" x="1305" y="769" zorder="1" linkedscene="balcony" facing="0"/>
+	<layer name="spot13" style="mapspot" x="1178" y="513" zorder="1" linkedscene="kitchen_dining" facing="180"/>
+	<layer name="spot14" style="mapspot" x="850" y="513" zorder="1" linkedscene="kitchen" facing="180"/>
+	
+	
+</krpano>

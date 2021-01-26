@@ -293,7 +293,7 @@
 	<!-- Disabled currently -->
 	<layer name="map_toggle" type="image" keep="true" url="%VIEWER%/icons/mapon.png" scale="0.05" align="leftbottom" x="50" y="50" onclick="toggle_map();"
 	alpha="1" 
-	visible="false" enabled="false"/>
+	visible="true" enabled="true"/>
 	
 	<action name="toggle_map" scope="local">
 		if(layer[map].alpha == 1,
